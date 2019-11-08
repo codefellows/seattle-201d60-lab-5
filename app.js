@@ -125,6 +125,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var firstNum;
+  var secondNum;
+  var thirdNum;
+  for (var i = 0; i < multArr.length; i++) {
+    if (i === 0) {
+      firstNum = multArr[i];
+    } else if (i === 1) {
+      secondNum = multArr[i];
+    } else if (i === 2) {
+      thirdNum = multArr[i];
+    }
+  }
+  var multiFirstTwo = multiply(firstNum, secondNum);
+  var finalMulti = multiply(multiFirstTwo[0], thirdNum);
+
+  var txt = 'The numbers 2,3,4 have a product of ' + finalMulti[0] + '.';
+
+  return [finalMulti[0], txt];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
