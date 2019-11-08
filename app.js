@@ -58,18 +58,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumFirstTwo = sum(a, b);
-  var finalSum = sum(sumFirstTwo[0], c);
-  var multiFirstTwo = multiply(a, b);
-  var finalmulti = multiply(multiFirstTwo[0], c);
-  
-  var sumTxt = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum[0] + '.';
-  var multiTxt = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is '+ finalmulti[0] + '.';
-  return [finalSum[0], finalmulti[0], sumTxt, multiTxt];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -87,29 +79,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var firstNum;
-  var secondNum;
-  var thirdNum;
-  for (var i = 0; i < sumArr.length; i++) {
-    if (i === 0) {
-      firstNum = sumArr[i];
-    } else if (i === 1) {
-      secondNum = sumArr[i];
-    } else if (i === 2) {
-      thirdNum = sumArr[i];
-    }
-  }
-  var sumFirstTwo = sum(firstNum, secondNum);
-  var finalSum = sum(sumFirstTwo[0], thirdNum);
-
-  var txt = '2,3,4 was passed in as an array of numbers, and ' + finalSum[0] + ' is their sum.';
-
-  return [finalSum[0], txt];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -125,28 +99,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var firstNum;
-  var secondNum;
-  var thirdNum;
-  for (var i = 0; i < multArr.length; i++) {
-    if (i === 0) {
-      firstNum = multArr[i];
-    } else if (i === 1) {
-      secondNum = multArr[i];
-    } else if (i === 2) {
-      thirdNum = multArr[i];
-    }
-  }
-  var multiFirstTwo = multiply(firstNum, secondNum);
-  var finalMulti = multiply(multiFirstTwo[0], thirdNum);
-
-  var txt = 'The numbers 2,3,4 have a product of ' + finalMulti[0] + '.';
-
-  return [finalMulti[0], txt];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
+// testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -170,18 +126,9 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [5,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-  var num1;
-  var num2;
-  var answer;
-  for (var i = 0; i < testDynamicArray.length; i++) {
-    answer[0] = multiply(testDynamicArray[0], testDynamicArray[1]);
-    // var finalMulti = multiply(multiFirstTwo[0], thirdNum);
-  }
-
-  console.log('answer : ', answer[0]);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyAnyArray(testDynamicArray);
+// testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
