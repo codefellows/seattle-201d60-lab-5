@@ -62,11 +62,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { 
   //eslint-disable-line
-  var elementOne = a+b+c;
-  var elementTwo = a*b*c;
-  var elementThree = `${a} and ${b} and ${c} sum to ${elementOne}.`;
-  var elementFour = `The product of ${a} and ${b} and ${c} is ${elementTwo}.`;
-  var elementArray = [elementOne, elementTwo, elementThree, elementFour];
+  var elementOneSumOne = sum(a, b);
+  var elementOneSumResult = sum(elementOneSumOne[0], c);
+  var elementTwoMultiplyOne = multiply(a, b);
+  var elementTwoMultiplyResult = multiply(elementTwoMultiplyOne[0], c)
+  console.log(`${elementTwoMultiplyOne[0]}`)
+  var elementThree = `${a} and ${b} and ${c} sum to ${elementOneSumResult[0]}.`;
+  var elementFour = `The product of ${a} and ${b} and ${c} is ${elementTwoMultiplyResult[0]}.`;
+  var elementArray = [elementOneSumResult[0], elementTwoMultiplyResult[0], elementThree, elementFour];
   return elementArray;
 }
 
@@ -92,11 +95,14 @@ function sumArray(sumArr) {
   //eslint-disable-line
   var valueHold = 0;
   for (var i = 0; i < sumArr.length; i++){
-    valueHold += sumArr[i];
-    console.log(`value ${valueHold}`)
+    var innerVar = sum(valueHold, sumArr[i]);
+    valueHold = innerVar[0];
+    //console.log(`value ${valueHold}`);
   }
-  var arrayMsg = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${valueHold} is their sum.`;
-  return [valueHold, arrayMsg];
+  //console.log(`summer${summer[0]}`);
+  var arrayMsg = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${innerVar[0]} is their sum.`;
+  return [innerVar[0], arrayMsg];
+  
 
 }
 
