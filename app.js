@@ -92,13 +92,7 @@ function sumArray(sumArr) { //eslint-disable-line
   var strArray = sumArr.join();
   var firstSum = sum(sumArr[0], sumArr[1])[0];
   totalSum = sum(firstSum, sumArr[2])[0];
-  // }
-  // var sum = 0;
-  // var strArray = sumArr.join();;
-  // var sent = '';
-  // for (var i=0; i<sumArr.length; i++){
-  //   sum += sumArr[i]; 
-  // }
+
   var sent = `${strArray} was passed in as an array of numbers, and ${totalSum} is their sum.`;
   return [totalSum, sent];
 }
@@ -121,14 +115,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var total = 1;
+  
   var strArray = multArr.join();
   var sent = '';
-  for (var i=0; i<multArr.length; i++){
-    total *= multArr[i]; 
-  }
-  sent = `The numbers ${strArray } have a product of ${total}.`;
-  return [total, sent];
+  var firstPro = multiply(multArr[0], multArr[1])[0];
+  var totalPro = multiply(firstPro, multArr[2])[0];
+
+  sent = `The numbers ${strArray } have a product of ${totalPro}.`;
+  return [totalPro, sent];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
