@@ -59,8 +59,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var totalSum = a + b + c;
-  var totalPro = a * b * c;
+  var firstSum = sum(a, b)[0];
+  var totalSum = sum(firstSum, c)[0];
+  var firstPro = multiply(a, b)[0];
+  var totalPro = multiply(firstPro, c)[0];
   var sent1 = `${a} and ${b} and ${c} sum to ${totalSum}.`;
   var sent2 = `The product of ${a} and ${b} and ${c} is ${totalPro}.`;
   var newArr = [totalSum, totalPro, sent1, sent2];
