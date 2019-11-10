@@ -12,7 +12,7 @@ function sum(a, b) { //eslint-disable-line
   // return an array
   // 1st element is the sum of the numbers
   // 2nd element is The sum of 4 and 7 is 11.
-  var answer = a+b;
+  var answer = a + b;
   // template literal
   var newSent = `The sum of ${a} and ${b} is ${answer}.`;
   var sent = 'The sum of ' + a + ' and ' + b + ' is ' + answer + '.';
@@ -21,7 +21,8 @@ function sum(a, b) { //eslint-disable-line
 }
 
 // Here is the test for sum(); uncomment it to run it
- testSum(4, 7);
+// eslint-disable-next-line no-undef
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -35,11 +36,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  // return an array
+  // 1st element is the sum of the numbers
+  // 2nd element is The sum of 4 and 7 is 11.
+  var answer = a * b;
+  // template literal
+  var newSent = `The product of ${a} and ${b} is ${answer}.`;
+  var returnArray = [answer, newSent];
+  return returnArray;
 }
 
+
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+// eslint-disable-next-line no-undef
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +66,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumFirsts = sum(a, b);
+  var finalSum1 = sum(sumFirsts[0], c);
+  var FirstTwo = multiply(a, b);
+  var final2 = multiply(FirstTwo[0], c);
 
+  var txtFinal = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum1[0] + '.';
+  var multiTxt = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is '+ final2[0] + '.';
+  return [finalSum1[0], final2[0], txtFinal, multiTxt];
 }
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+// Here is the test for sumAndMultiply(); uncomment it to run it2
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,13 +94,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(sumArr) {
+  var add1 = sum(sumArr[0], sumArr[1]);
+  var add2 = sum(add1[0], sumArr[2]);
+  return [
+    add2[0],
+    `${sumArr.toString()} was passed in as an array of numbers, and ${add2[0]} is their sum.`
+  ];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -98,12 +120,17 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-
+function multiplyArray(multiArray) { //eslint-disable-line.
+  var multi1 = multiply(multiArray[0], multiArray[1]);
+  var multi2 = multiply(multi1[0], multiArray[2]);
+  return [
+    multi2[0],
+    `The numbers ${multiArray.toString()} have a product of ${multi2[0]}.`
+  ];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
