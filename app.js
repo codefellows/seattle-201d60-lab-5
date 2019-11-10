@@ -120,7 +120,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multiArray) { //eslint-disable-line
+function multiplyArray(multiArray) { //eslint-disable-line.
   var multi1 = multiply(multiArray[0], multiArray[1]);
   var multi2 = multiply(multi1[0], multiArray[2]);
   return [
