@@ -45,7 +45,7 @@ function multiply(a, b) { //eslint-disable-line
 
 // Here is the test for multiply(); uncomment it to run it
 // eslint-disable-next-line no-undef
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -62,9 +62,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var firstSum = sum(a,b);
+  var firstSum = sum(a, b);
   var secSum = sum(firstSum[0], c);
-  var firstMulti = multiply(a,b);
+  var firstMulti = multiply(a, b);
   var secMulti = multiply(firstMulti[0], c);
   var sumMsg = `${a} and ${b} and ${c} sum to ${secSum[0]}.`;
   var multiMsg = `The product of ${a} and ${b} and ${c} is ${secMulti[0]}.`;
@@ -74,7 +74,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // eslint-disable-next-line no-undef
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -92,10 +92,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sumOne = sum(sumArr[0],sumArr[1]);
-  var sumTwo = sum(sumOne[0], sumArr[2]);
-  var msg = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumTwo[0]} is their sum.`;
-  var results = [sumTwo[0], msg];
+  var sumInit = 0;
+  var sumList = '';
+  for (var i = 0; i < sumArr.length; i++) {
+    var sumResult = sum(sumInit, sumArr[i]);
+    sumInit = sumResult[0];
+
+    if (i === sumArr.length - 1) {
+      sumList += `${sumArr[i]}`;
+    } else {
+      sumList += `${sumArr[i]},`;
+    }
+  }
+
+  var msg = `${sumList} was passed in as an array of numbers, and ${sumResult[0]} is their sum.`;
+  var results = [sumResult[0], msg];
   return results;
 }
 
@@ -118,10 +129,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var multiOne = multiply(multArr[0], multArr[1]);
-  var multiSec = multiply(multiOne[0],multArr[2]);
-  var msg = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${multiSec[0]}.`;
-  var results = [multiSec[0], msg];
+  var multInit = 1;
+  var multList = '';
+
+  for (var i = 0; i < multArr.length; i++) {
+    var multResult = multiply(multInit, multArr[i]);
+    // console.log(multResult);
+    multInit = multResult[0];
+
+    if (i === multArr.length - 1) {
+      multList += `${multArr[i]}`;
+    } else {
+      multList += `${multArr[i]},`;
+    }
+  }
+  var msg = `The numbers ${multList} have a product of ${multInit}.`;
+  var results = [multInit, msg];
   return results;
 }
 
@@ -151,10 +174,27 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  var multInit = 1;
+  var multList = '';
 
+  for (var i = 0; i < dynamicArray.length; i++) {
+    var multResult = multiply(multInit, dynamicArray[i]);
+    // console.log(multResult);
+    multInit = multResult[0];
+
+    if (i === dynamicArray.length - 1) {
+      multList += `${dynamicArray[i]}`;
+    } else {
+      multList += `${dynamicArray[i]},`;
+    }
+  }
+  var msg = `The numbers ${multList} have a product of ${multInit}.`;
+  var results = [multInit, msg];
+  return results;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+// eslint-disable-next-line no-undef
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
