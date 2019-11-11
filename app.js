@@ -12,16 +12,18 @@ function sum(a, b) { //eslint-disable-line
   // return an array
   // 1st element is the sum of the numbers
   // 2nd element is The sum of 4 and 7 is 11.
-  var answer = a+b;
+  var answer = a + b;
   // template literal
   var newSent = `The sum of ${a} and ${b} is ${answer}.`;
+  // eslint-disable-next-line no-unused-vars
   var sent = 'The sum of ' + a + ' and ' + b + ' is ' + answer + '.';
   var returnArray = [answer, newSent];
   return returnArray;
 }
 
 // Here is the test for sum(); uncomment it to run it
- testSum(4, 7);
+// eslint-disable-next-line no-undef
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -35,11 +37,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  var answer = a * b;
+  var msg = `The product of ${a} and ${b} is ${answer}.`;
+  var msgArray = [answer, msg];
+  return msgArray;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+// eslint-disable-next-line no-undef
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +62,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  var firstSum = sum(a, b);
+  var secSum = sum(firstSum[0], c);
+  var firstMulti = multiply(a, b);
+  var secMulti = multiply(firstMulti[0], c);
+  var sumMsg = `${a} and ${b} and ${c} sum to ${secSum[0]}.`;
+  var multiMsg = `The product of ${a} and ${b} and ${c} is ${secMulti[0]}.`;
+  var result = [secSum[0], secMulti[0], sumMsg, multiMsg];
+  return result;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+// eslint-disable-next-line no-undef
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -78,12 +92,28 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var sumInit = 0;
+  var sumList = '';
+  for (var i = 0; i < sumArr.length; i++) {
+    var sumResult = sum(sumInit, sumArr[i]);
+    sumInit = sumResult[0];
 
+    if (i === sumArr.length - 1) {
+      sumList += `${sumArr[i]}`;
+    } else {
+      sumList += `${sumArr[i]},`;
+    }
+  }
+
+  var msg = `${sumList} was passed in as an array of numbers, and ${sumResult[0]} is their sum.`;
+  var results = [sumResult[0], msg];
+  return results;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+// eslint-disable-next-line no-undef
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -99,13 +129,30 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var multInit = 1;
+  var multList = '';
 
+  for (var i = 0; i < multArr.length; i++) {
+    var multResult = multiply(multInit, multArr[i]);
+    // console.log(multResult);
+    multInit = multResult[0];
+
+    if (i === multArr.length - 1) {
+      multList += `${multArr[i]}`;
+    } else {
+      multList += `${multArr[i]},`;
+    }
+  }
+  var msg = `The numbers ${multList} have a product of ${multInit}.`;
+  var results = [multInit, msg];
+  return results;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+// eslint-disable-next-line no-undef
+testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
@@ -124,13 +171,30 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  var multInit = 1;
+  var multList = '';
 
+  for (var i = 0; i < dynamicArray.length; i++) {
+    var multResult = multiply(multInit, dynamicArray[i]);
+    // console.log(multResult);
+    multInit = multResult[0];
+
+    if (i === dynamicArray.length - 1) {
+      multList += `${dynamicArray[i]}`;
+    } else {
+      multList += `${dynamicArray[i]},`;
+    }
+  }
+  var msg = `The numbers ${multList} have a product of ${multInit}.`;
+  var results = [multInit, msg];
+  return results;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+// eslint-disable-next-line no-undef
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
