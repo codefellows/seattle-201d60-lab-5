@@ -89,15 +89,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { 
-  //eslint-disable-line
+function sumArray(sumArr) {
   var valueHold = 0;
-  for (var i = 0; i < sumArr.length; i++){
+  for (var i =0; i < sumArr.length; i++){
     var innerVar = sum(valueHold, sumArr[i]);
     valueHold = innerVar[0];
   }
   var arrayMsg = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${innerVar[0]} is their sum.`;
   return [innerVar[0], arrayMsg];
+
+  //This problem completed with the help of Mattaeus
+
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -117,8 +119,8 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { 
-  //eslint-disable-line
+function multiplyArray(multArr) {
+
   var valueHold = 1;
   for (var i = 0; i < multArr.length; i++){
     var innerVar = multiply(valueHold, multArr[i]);
@@ -126,6 +128,9 @@ function multiplyArray(multArr) {
   }
   var arrayMsg = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${innerVar[0]}.`;
   return [innerVar[0], arrayMsg];
+
+  //This problem completed with the help of Mattaeus
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -153,6 +158,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
+
   var valueHold = 1;
   for (var i = 0; i < dynamicArray.length; i++){
     var innerVar = multiply(valueHold, dynamicArray[i]);
@@ -160,6 +166,17 @@ function multiplyAnyArray(dynamicArray) {
   }
   var arrayMsg = `The numbers ${dynamicArray.toString()} have a product of ${innerVar[0]}.`;
   return [innerVar[0], arrayMsg];
+
+
+  //This problem completed with the help of Mattaeus
+
+  //var valueHold = 1;
+  //for (var i = 0; i < dynamicArray.length; i++){
+    //var innerVar = multiply(valueHold, dynamicArray[i]);
+    //valueHold = innerVar[0];
+  //}
+  //var arrayMsg = `The numbers ${dynamicArray.toString()} have a product of ${innerVar[0]}.`;
+  //return [innerVar[0], arrayMsg];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
