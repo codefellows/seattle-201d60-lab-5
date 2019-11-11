@@ -3,7 +3,15 @@
 // You should not modify anything in this file, but feel free to look through it!
 
 function testSum() { //eslint-disable-line
-  if (sum(4,7)[0] === 11 && sum(4,7)[1] === 'The sum of 4 and 7 is 11.') {
+
+  var sumValues = sum(4, 7);
+
+  var sumVal = sumValues[0];
+
+  var sumSentence = sumValues[1];
+
+
+  if (sumVal === 11 && sumSentence === 'The sum of 4 and 7 is 11.') {
     console.log('%c TEST FOR sum() PASSES', 'color: green');
   } else {
     console.log('%c TEST FOR sum() FAILS', 'color: red');
@@ -16,6 +24,13 @@ function testMultiply() { //eslint-disable-line
   } else {
     console.log('%c TEST FOR multiply() FAILS', 'color: red');
   }
+
+  if (multiply(5,10)[0] === 50 && multiply(5,10)[1] === 'The product of 5 and 10 is 50.') {
+    console.log('%c TEST FOR multiply() PASSES', 'color: green');
+  } else {
+    console.log('%c TEST FOR multiply() FAILS', 'color: red');
+  }
+
 }
 
 function testSumAndMultiply() { //eslint-disable-line
