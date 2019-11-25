@@ -35,11 +35,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+//return an array
+//The first element is the product of those numbers
+//The second element is a string The product of 5 and 9 is 45.
+var multAnswer = a*b;
+var multSent = `The product of ${a} and ${b} is ${multAnswer}.`;
+var mArray = [multAnswer, multSent];
+return mArray;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+ testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +62,30 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+//return an array
+//first element sum of 3 #
+//second element product of 3
+//3rd element "4 and 7 and 5 sum to 16."
+//4th element "The product of 4 and 7 and 5 is 140."
 
+var firstSum = sum(a, b)[0];
+var totalSum = sum(firstSum, c)[0];
+
+var firstProduct = multiply(a, b)[0];
+var totalProduct = multiply(firstProduct, c)[0];
+
+
+var firstElement = totalSum;
+var secondElement = totalProduct; 
+var thirdElement = `${a} and ${b} and ${c} sum to ${totalSum}.`;
+var fourthElement = `The product of ${a} and ${b} and ${c} is ${totalProduct}.`;
+
+var sumAndMultarray = [firstElement, secondElement, thirdElement, fourthElement];
+
+return sumAndMultarray;
 }
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
