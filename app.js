@@ -96,6 +96,9 @@ function sumArray(sumArr) { //eslint-disable-line
   var firstSum = sum(firstSum[0], sumArr [1])[0];
   totalsum = sum(firstSum, sumArr [2])[0];
 
+  var sent = '${strArray} was passed as an array of numbers, and ${totalSum} is their sum.';
+  return [toatlSum, Sent];
+
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -116,11 +119,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var strArray = multArr.join();
+  var sent = '';
+  var firstPro = multiply(multArr[0],multArr[1][0]);
+
+  sent = `the numbers ${strArray} product of ${toalPro}.`;
+  return [toatlPro, sent];
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -144,6 +153,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  
 
 }
 
