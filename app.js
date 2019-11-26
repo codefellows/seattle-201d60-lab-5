@@ -60,16 +60,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var firstSum = sum (a,b)[0];
-  var totalSum = sum(firstSum, c)[0];
-  var firstPro = multiply(a,b) [0];
-  var totalPro = miltiply(firstPro, c)[0];
-  var sent1 = '${a} and ${b} and ${c} sum is ${totalSum}.';
-  var sent2 = 'the product of ${a} and ${b} adn ${c} is ${totalPro}.';
-  var newArr = [totalSum, totalPro, sent1, sent2];
-  return newArr;
-
-
+  var firstSum = sum (a,b);
+  var secodSum = sum(firstSum[0],c);
+  var totalSum = secondSum[0];
+  var firstPro = multiply(a,b);
+  var secondPro = multiply(firstPro[0],c);
+  var totalPro = secondPro[0];
+  var sent1= (a+ 'and' + b + 'and' + 'sum to' + totalSum + '.');
+  // var sent1 = '${a} and ${b} and ${c} sum is ${totalSum}.';
+  // var sent2 = 'the product of ${a} and ${b} adn ${c} is ${totalPro}.';
+  return [totalSum, totalPro, sent1, sent2];
+  // return newArr;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -92,11 +93,14 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
   var totalSum = 0;
-  var strArray = sumArr.join();
-  var firstSum = sum(firstSum[0], sumArr [1])[0];
-  totalsum = sum(firstSum, sumArr [2])[0];
+  // var strArray = sumArr.join();
+  var firstSum = sum(testArray[0], testArray[1]);
+  var secondSum = sum(firstSum[0], testArray[2]);
+  // totalsum = sum(firstSum, sumArr [2])[0];
+  var totalSum = secondSum[0];
 
-  var sent = '${strArray} was passed as an array of numbers, and ${totalSum} is their sum.';
+  // var sent = '${strArray} was passed as an array of numbers, and ${totalSum} is their sum.';
+  var sent = (testArray[0]+ ',' + testArray[1] + testArray[2] + 'we passed in as an array of numbers, and' + totalSum + 'is their sum.');
   return [toatlSum, Sent];
 
 }
@@ -118,13 +122,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+var multArr = [2,3,4]
 function multiplyArray(multArr) { //eslint-disable-line
-  var strArray = multArr.join();
-  var sent = '';
-  var firstPro = multiply(multArr[0],multArr[1][0]);
+  // var strArray = multArr.join();
+  // var sent = '';
+  // var firstPro = multiply(multArr[0],multArr[1][0]);
 
-  sent = `the numbers ${strArray} product of ${toalPro}.`;
-  return [toatlPro, sent];
+  // sent = `the numbers ${strArray} product of ${toalPro}.`;
+  // return [toatlPro, sent];
+  var one = multiply(multArr[0], multArr[1]);
+  var two = multiply(one[0], multArr[2]);
+  var total = two [0];
+  var sent = ('The numbers' + multArr[0] + ',' +  multArr[1] + ',' +multArr[2] + 'have a product of' + 'have a product of' + total + ',');
+  return [total, sent];
 
 }
 
@@ -154,7 +164,7 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   
-
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
