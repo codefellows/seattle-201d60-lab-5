@@ -7,7 +7,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-// Write your code here
+
 function sum(a, b) { //eslint-disable-line
   // return an array
   // 1st element is the sum of the numbers
@@ -20,10 +20,10 @@ function sum(a, b) { //eslint-disable-line
   return returnArray;
 }
 
-// Here is the test for sum(); uncomment it to run it
+// Here is the test for sum();
  testSum(4, 7);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+
 
 /////////////////////////////////////
 /* Problem 2
@@ -35,11 +35,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+  var result = a * b;
+  var sent = 'The product of ${a} and ${b} is ${result}.';
+  var resultArray = [result, sent];
+  return resultArray;
 
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +60,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  var firstSum = sum (a,b);
+  var secodSum = sum(firstSum[0],c);
+  var totalSum = secondSum[0];
+  var firstPro = multiply(a,b);
+  var secondPro = multiply(firstPro[0],c);
+  var totalPro = secondPro[0];
+  var sent1= (a+ 'and' + b + 'and' + 'sum to' + totalSum + '.');
+  // var sent1 = '${a} and ${b} and ${c} sum is ${totalSum}.';
+  // var sent2 = 'the product of ${a} and ${b} adn ${c} is ${totalPro}.';
+  return [totalSum, totalPro, sent1, sent2];
+  // return newArr;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -78,12 +92,22 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var totalSum = 0;
+  // var strArray = sumArr.join();
+  var firstSum = sum(testArray[0], testArray[1]);
+  var secondSum = sum(firstSum[0], testArray[2]);
+  // totalsum = sum(firstSum, sumArr [2])[0];
+  var totalSum = secondSum[0];
+
+  // var sent = '${strArray} was passed as an array of numbers, and ${totalSum} is their sum.';
+  var sent = (testArray[0]+ ',' + testArray[1] + testArray[2] + 'we passed in as an array of numbers, and' + totalSum + 'is their sum.');
+  return [toatlSum, Sent];
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -98,12 +122,24 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+var multArr = [2,3,4]
 function multiplyArray(multArr) { //eslint-disable-line
+  // var strArray = multArr.join();
+  // var sent = '';
+  // var firstPro = multiply(multArr[0],multArr[1][0]);
+
+  // sent = `the numbers ${strArray} product of ${toalPro}.`;
+  // return [toatlPro, sent];
+  var one = multiply(multArr[0], multArr[1]);
+  var two = multiply(one[0], multArr[2]);
+  var total = two [0];
+  var sent = ('The numbers' + multArr[0] + ',' +  multArr[1] + ',' +multArr[2] + 'have a product of' + 'have a product of' + total + ',');
+  return [total, sent];
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -127,7 +163,8 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
